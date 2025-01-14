@@ -1,29 +1,37 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  useParams,
-} from "react-router-dom";
-import PagPrincipal from "./pages/PagPrincipal";
+import React, { useState } from "react";
 import Categoria from "./pages/Categoria";
 
 const App = () => {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<PagPrincipal />} />
-        <Route path="/categoria/:nombre" element={<CategoriaWrapper />} />
-      </Routes>
-    </Router>
-  );
-};
+  const [categoria, setCategoria] = useState("Home"); // Estado para la categoría seleccionada
 
-// Wrapper para pasar la categoría al componente Categoria
-const CategoriaWrapper = () => {
-  const { nombre } = useParams();
-  return <Categoria categoria={nombre.toUpperCase()} />;
+  const handleMenuClick = (newCategoria) => {
+    setCategoria(newCategoria); // Cambia la categoría seleccionada
+  };
+
+  return (
+    <div>
+      {/* Menú de navegación */}
+      <div className="menu">
+        <p
+          className="logo"
+          onClick={() => handleMenuClick("Home")} // Vuelve al menú principal
+        >
+          PUNTOCREATIVO
+        </p>
+        <ul>
+          <li onClick={() => handleMenuClick("FUENTES")}>FUENTES</li>
+          <li onClick={() => handleMenuClick("CHIMENEAS")}>CHIMENEAS</li>
+          <li onClick={() => handleMenuClick("FICTICIOS")}>FICTICIOS</li>
+          <li onClick={() => handleMenuClick("MERCHANDISING")}>
+            MERCHANDISING
+          </li>
+        </ul>
+      </div>
+
+      {/* Contenido basado en la categoría seleccionada */}
+      <Categoria categoria={categoria} />
+    </div>
+  );
 };
 
 export default App;
