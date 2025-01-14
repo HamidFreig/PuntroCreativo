@@ -1,15 +1,29 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useParams,
+} from "react-router-dom";
+import PagPrincipal from "./pages/PagPrincipal";
+import Categoria from "./pages/Categoria";
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <p className="text-blue-800">Texto Azul</p>
-      <p className="text-green-800">Texto Verde</p>
-      <p className="text-red-800">Texto Rojo</p>
-      <p className="text-black">Texto Negro</p>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<PagPrincipal />} />
+        <Route path="/categoria/:nombre" element={<CategoriaWrapper />} />
+      </Routes>
+    </Router>
   );
-}
+};
+
+// Wrapper para pasar la categoría al componente Categoria
+const CategoriaWrapper = () => {
+  const { nombre } = useParams();
+  return <Categoria categoria={nombre.toUpperCase()} />;
+};
 
 export default App;
