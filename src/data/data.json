@@ -4,13 +4,13 @@
       "titulo": "Fuente Moderna",
       "descripcion": "Fuente de agua moderna con luces LED.",
       "precio": 120000,
-      "foto": "ruta_fuente_moderna.jpg"
+      "foto": "https://m.media-amazon.com/images/I/71yNB4gpsdL._AC_UF894,1000_QL80_.jpg"
     },
     {
       "titulo": "Fuente Clásica",
       "descripcion": "Fuente clásica con acabado en piedra.",
       "precio": 90000,
-      "foto": "ruta_fuente_clasica.jpg"
+      "foto": "https://m.media-amazon.com/images/I/71yNB4gpsdL._AC_UF894,1000_QL80_.jpg"
     }
   ],
   "CHIMENEAS": [
@@ -18,7 +18,7 @@
       "titulo": "Chimenea Eléctrica",
       "descripcion": "Chimenea eléctrica ideal para interiores.",
       "precio": 150000,
-      "foto": "ruta_chimenea_electrica.jpg"
+      "foto": "https://m.media-amazon.com/images/I/71yNB4gpsdL._AC_UF894,1000_QL80_.jpg"
     }
   ],
   "FICTICIOS": [
@@ -26,7 +26,7 @@
       "titulo": "Fuego Ficticio Pequeño",
       "descripcion": "Fuego ficticio con efecto realista.",
       "precio": 50000,
-      "foto": "ruta_ficticio_pequeno.jpg"
+      "foto": "https://m.media-amazon.com/images/I/71yNB4gpsdL._AC_UF894,1000_QL80_.jpg"
     }
   ],
   "MERCHANDISING": [
@@ -34,7 +34,7 @@
       "titulo": "Taza Personalizada",
       "descripcion": "Taza personalizada con diseños únicos.",
       "precio": 10000,
-      "foto": "ruta_taza_personalizada.jpg"
+      "foto": "https://m.media-amazon.com/images/I/71yNB4gpsdL._AC_UF894,1000_QL80_.jpg"
     }
   ]
 }

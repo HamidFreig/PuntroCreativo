@@ -11,18 +11,36 @@ const App = () => {
   return (
     <div>
       {/* Menú de navegación */}
-      <div className="menu">
+      <div className="menu bg-gray-800 text-white p-4 flex justify-between items-center">
         <p
-          className="logo"
-          onClick={() => handleMenuClick("Home")} // Vuelve al menú principal
+          className="logo text-2xl font-bold cursor-pointer hover:text-gray-300"
+          onClick={() => handleMenuClick("Home")}
         >
           PUNTOCREATIVO
         </p>
-        <ul>
-          <li onClick={() => handleMenuClick("FUENTES")}>FUENTES</li>
-          <li onClick={() => handleMenuClick("CHIMENEAS")}>CHIMENEAS</li>
-          <li onClick={() => handleMenuClick("FICTICIOS")}>FICTICIOS</li>
-          <li onClick={() => handleMenuClick("MERCHANDISING")}>
+        <ul className="flex gap-6">
+          <li
+            className="font-semibold cursor-pointer hover:text-gray-300"
+            onClick={() => handleMenuClick("FUENTES")}
+          >
+            FUENTES
+          </li>
+          <li
+            className="font-semibold cursor-pointer hover:text-gray-300"
+            onClick={() => handleMenuClick("CHIMENEAS")}
+          >
+            CHIMENEAS
+          </li>
+          <li
+            className="font-semibold cursor-pointer hover:text-gray-300"
+            onClick={() => handleMenuClick("FICTICIOS")}
+          >
+            FICTICIOS
+          </li>
+          <li
+            className="font-semibold cursor-pointer hover:text-gray-300"
+            onClick={() => handleMenuClick("MERCHANDISING")}
+          >
             MERCHANDISING
           </li>
         </ul>

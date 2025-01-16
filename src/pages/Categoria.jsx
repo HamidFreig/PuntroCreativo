@@ -26,14 +26,27 @@ const Categoria = ({ categoria }) => {
   return (
     <div>
       <PagPrincipal />
-      <h1>{categoria}</h1>
-      <div className="category-items">
+      <h1 className="text-3xl font-bold text-center my-6">{categoria}</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {items.map((item, index) => (
-          <div key={index} className="item-card">
-            <img src={item.foto} alt={item.titulo} />
-            <h2>{item.titulo}</h2>
-            <p>{item.descripcion}</p>
-            <p>${item.precio.toLocaleString()}</p>
+          <div
+            key={index}
+            className="item-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src={item.foto}
+              alt={item.titulo}
+              className="h-48 w-full object-cover"
+            />
+            <div className="p-4">
+              <h2 className="text-lg font-semibold text-gray-800">
+                {item.titulo}
+              </h2>
+              <p className="text-sm text-gray-600 mt-2">{item.descripcion}</p>
+              <p className="text-xl font-bold text-blue-600 mt-4">
+                ${item.precio.toLocaleString()}
+              </p>
+            </div>
           </div>
         ))}
       </div>
