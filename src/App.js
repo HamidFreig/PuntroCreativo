@@ -13,7 +13,7 @@ const App = () => {
   return (
     <div>
       {/* Menú de navegación */}
-      <div className="bg-gray-800 text-white flex flex-col items-center p-4">
+      <div className="bg-white text-black flex flex-col items-center p-4 ">
         {/* Título centrado */}
         <p
           className="text-3xl font-bold cursor-pointer hover:text-gray-300 mb-4"
@@ -30,7 +30,7 @@ const App = () => {
           ☰
         </button>
         <ul
-          className={`md:flex gap-6 w-full md:w-auto text-center bg-gray-800 md:bg-transparent transition-all duration-300 ${
+          className={`md:flex gap-6 w-full md:w-auto text-center  md:bg-transparent transition-all duration-300 ${
             isMenuOpen ? "block" : "hidden"
           }`}
         >

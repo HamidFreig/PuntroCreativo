@@ -1,21 +1,38 @@
 import React from "react";
-import terraza from "../img/terraza.jfif"; // Importa la imagen
+import img1 from "../img/img1.jpg"; // Imagen para CHIMENEAS
+import img2 from "../img/img2.jpg"; // Imagen para FUENTES
+import img3 from "../img/img3.jpg"; // Imagen para FICTICIOS
+import img4 from "../img/img4.jpg"; // Imagen para MERCHANDISING
+
+const categories = [
+  { img: img1, title: "CHIMENEAS" },
+  { img: img2, title: "FUENTES" },
+  { img: img3, title: "FICTICIOS" },
+  { img: img4, title: "MERCHANDISING" },
+];
 
 const PagPrincipal = () => {
   return (
-    <div className="relative">
-      {/* Imagen de fondo */}
-      <img
-        src={terraza}
-        alt="Decoración creativa"
-        className="w-full h-[400px] object-cover"
-      />
-      {/* Texto sobre la imagen */}
-      <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-        <h1 className="text-white text-4xl md:text-5xl font-bold text-center bg-black bg-opacity-50 p-4 rounded-lg shadow-lg">
-          Deja que la originalidad sea el sello de tu marca personal
-        </h1>
-      </div>
+    <div className="w-full flex flex-wrap md:flex-nowrap">
+      {categories.map((category, index) => (
+        <div
+          key={index}
+          className="relative group overflow-hidden h-[200px] w-full md:h-[500px] md:flex-1"
+        >
+          {/* Imagen */}
+          <img
+            src={category.img}
+            alt={category.title}
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+          />
+          {/* Texto superpuesto */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+            <h2 className="text-white text-3xl md:text-4xl font-bold uppercase transition-opacity duration-300 group-hover:opacity-100">
+              {category.title}
+            </h2>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

@@ -25,8 +25,7 @@ const Categoria = ({ categoria }) => {
   // Renderiza los productos de la categoría
   return (
     <div>
-      <PagPrincipal />
-      <h1 className="text-3xl font-bold text-center my-6">{categoria}</h1>
+      <h1 className="text-3xl font-bold text-center my-6"></h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {items.map((item, index) => (
           <div
