@@ -13,13 +13,16 @@ const App = () => {
   return (
     <div>
       {/* Menú de navegación */}
-      <div className="menu bg-gray-800 text-white p-4 flex justify-between items-center">
+      <div className="bg-gray-800 text-white flex flex-col items-center p-4">
+        {/* Título centrado */}
         <p
-          className="logo text-2xl font-bold cursor-pointer hover:text-gray-300"
+          className="text-3xl font-bold cursor-pointer hover:text-gray-300 mb-4"
           onClick={() => handleMenuClick("Home")}
         >
           PUNTOCREATIVO
         </p>
+
+        {/* Menú de navegación */}
         <button
           className="md:hidden text-2xl focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -27,30 +30,30 @@ const App = () => {
           ☰
         </button>
         <ul
-          className={`md:flex gap-6 absolute md:static top-16 left-0 w-full md:w-auto bg-gray-800 md:bg-transparent transition-all duration-300 ${
+          className={`md:flex gap-6 w-full md:w-auto text-center bg-gray-800 md:bg-transparent transition-all duration-300 ${
             isMenuOpen ? "block" : "hidden"
           }`}
         >
           <li
-            className="font-semibold cursor-pointer hover:text-gray-300 p-2 md:p-0"
+            className="font-semibold cursor-pointer hover:text-gray-300 py-2"
             onClick={() => handleMenuClick("FUENTES")}
           >
             FUENTES
           </li>
           <li
-            className="font-semibold cursor-pointer hover:text-gray-300 p-2 md:p-0"
+            className="font-semibold cursor-pointer hover:text-gray-300 py-2"
             onClick={() => handleMenuClick("CHIMENEAS")}
           >
             CHIMENEAS
           </li>
           <li
-            className="font-semibold cursor-pointer hover:text-gray-300 p-2 md:p-0"
+            className="font-semibold cursor-pointer hover:text-gray-300 py-2"
             onClick={() => handleMenuClick("FICTICIOS")}
           >
             FICTICIOS
           </li>
           <li
-            className="font-semibold cursor-pointer hover:text-gray-300 p-2 md:p-0"
+            className="font-semibold cursor-pointer hover:text-gray-300 py-2"
             onClick={() => handleMenuClick("MERCHANDISING")}
           >
             MERCHANDISING
