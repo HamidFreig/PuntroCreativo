@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import data from "../data/data.json"; // Importa el archivo JSON
 import PagPrincipal from "./PagPrincipal";
+import Oferta from "../helpers/oferta";
 
 const Categoria = ({ categoria }) => {
   const [items, setItems] = useState([]);
@@ -30,21 +31,27 @@ const Categoria = ({ categoria }) => {
         {items.map((item, index) => (
           <div
             key={index}
-            className="item-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+            className="item-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
           >
+            <Oferta /> {/* Este será el componente de la etiqueta "Oferta" */}
             <img
               src={item.foto}
               alt={item.titulo}
-              className="h-48 w-full object-cover"
+              className="h-56 w-full object-cover" // Foto más larga
             />
-            <div className="p-4">
-              <h2 className="text-lg font-semibold text-gray-800">
+            <div className="p-6">
+              <h2 className="text-xl font-bold text-gray-800 text-center">
                 {item.titulo}
               </h2>
-              <p className="text-sm text-gray-600 mt-2">{item.descripcion}</p>
-              <p className="text-xl font-bold text-blue-600 mt-4">
+              <p className="text-base text-gray-600 mt-3 text-center">
+                {item.descripcion}
+              </p>
+              <p className="text-2xl font-semibold text-black mt-5 text-center">
                 ${item.precio.toLocaleString()}
               </p>
+              <button className="mt-5 w-full bg-green-600 text-white py-2 px-4 rounded-lg text-base font-semibold hover:bg-green-700 transition-colors duration-300">
+                Ver más
+              </button>
             </div>
           </div>
         ))}
