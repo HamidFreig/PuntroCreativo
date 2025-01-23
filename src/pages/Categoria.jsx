@@ -27,13 +27,14 @@ const Categoria = ({ categoria }) => {
   return (
     <div>
       <h1 className="text-3xl font-bold text-center my-6"></h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6  mx-6">
         {items.map((item, index) => (
           <div
             key={index}
             className="item-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
           >
-            <Oferta /> {/* Este será el componente de la etiqueta "Oferta" */}
+            {item.oferta ? <Oferta /> : null}{" "}
+            {/* Este será el componente de la etiqueta "Oferta" */}
             <img
               src={item.foto}
               alt={item.titulo}

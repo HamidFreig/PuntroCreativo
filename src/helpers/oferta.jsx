@@ -3,10 +3,15 @@ import React from "react";
 const Oferta = () => {
   return (
     <div
-      className="bg-red-600 text-white text-xs font-bold uppercase rounded-full px-3 py-1 absolute top-3 right-3 shadow-md"
-      style={{ zIndex: 10 }}
+      className="bg-red-600 text-white text-center font-bold uppercase py-1.5 w-full shadow-md"
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        zIndex: 10,
+      }}
     >
-      Oferta
+      ¡OFERTA!
     </div>
   );
 };
