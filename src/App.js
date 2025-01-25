@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Categoria from "./pages/Categoria";
 import Footer from "./components/footer";
+import WhatsAppButton from "./components/whatsapp";
 
 const App = () => {
   const [categoria, setCategoria] = useState("Home"); // Estado para la categoría seleccionada
@@ -23,7 +24,7 @@ const App = () => {
           >
             PUNTOCREATIVO
           </p>
-
+          <WhatsAppButton />
           {/* Menú de navegación */}
           <button
             className="md:hidden text-2xl focus:outline-none"

@@ -1,8 +1,9 @@
 import React from "react";
+import "@fortawesome/fontawesome-free/css/all.min.css"; // Importa Font Awesome
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-10">
+    <footer className="bg-gray-900 text-gray-300 py-10 mt-8">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Información de Contacto */}
@@ -11,15 +12,15 @@ const Footer = () => {
             <ul>
               <li className="flex items-center mb-3">
                 <i className="fas fa-map-marker-alt text-red-500 mr-3"></i>
-                <span>123 Calle Ejemplo, Ciudad, País</span>
+                <span>Maipú, Santiago</span>
               </li>
               <li className="flex items-center mb-3">
                 <i className="fas fa-envelope text-red-500 mr-3"></i>
-                <span>contacto@ejemplo.com</span>
+                <span>Puntocreativok@hotmail.com</span>
               </li>
               <li className="flex items-center">
                 <i className="fab fa-whatsapp text-green-500 mr-3"></i>
-                <span>+123 456 789</span>
+                <span>+569 2243 8518</span>
               </li>
             </ul>
           </div>
@@ -41,7 +42,7 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a
                 href="https://www.facebook.com"
-                className="text-gray-400 hover:text-red-500 transition"
+                className="text-gray-400 hover:text-blue-500 transition"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -49,7 +50,7 @@ const Footer = () => {
               </a>
               <a
                 href="https://www.instagram.com"
-                className="text-gray-400 hover:text-red-500 transition"
+                className="text-gray-400 hover:text-pink-500 transition"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -57,7 +58,7 @@ const Footer = () => {
               </a>
               <a
                 href="https://www.twitter.com"
-                className="text-gray-400 hover:text-red-500 transition"
+                className="text-gray-400 hover:text-blue-400 transition"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -75,7 +76,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-500">
-          © {new Date().getFullYear()} Tu Empresa. Todos los derechos
+          © {new Date().getFullYear()} PuntoCreativo. Todos los derechos
           reservados.
         </div>
       </div>
