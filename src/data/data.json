@@ -1,6 +1,7 @@
 {
   "FUENTES": [
     {
+      "id": 1,
       "titulo": "Fuente Moderna",
       "descripcion": "Fuente de agua moderna con luces LED.",
       "precio": 120000,
@@ -8,6 +9,7 @@
       "oferta": true
     },
     {
+      "id": 2,
       "titulo": "Fuente Clásica",
       "descripcion": "Fuente clásica con acabado en piedra.",
       "precio": 90000,
@@ -16,6 +18,7 @@
   ],
   "CHIMENEAS": [
     {
+      "id": 3,
       "titulo": "Chimenea Eléctrica",
       "descripcion": "Chimenea eléctrica ideal para interiores.",
       "precio": 150000,
@@ -24,6 +27,7 @@
   ],
   "FICTICIOS": [
     {
+      "id": 4,
       "titulo": "Fuego Ficticio Pequeño",
       "descripcion": "Fuego ficticio con efecto realista.",
       "precio": 50000,
@@ -32,6 +36,7 @@
   ],
   "MERCHANDISING": [
     {
+      "id": 5,
       "titulo": "Taza Personalizada",
       "descripcion": "Taza personalizada con diseños únicos.",
       "precio": 10000,
