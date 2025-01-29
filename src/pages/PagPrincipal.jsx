@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Importa useNavigate
 import img1 from "../img/img1.jpg"; // Imagen para CHIMENEAS
 import img2 from "../img/img2.jpg"; // Imagen para FUENTES
 import img3 from "../img/img3.jpg"; // Imagen para FICTICIOS
@@ -12,12 +13,19 @@ const categories = [
 ];
 
 const PagPrincipal = () => {
+  const navigate = useNavigate(); // Hook para la navegación
+
+  const handleCategoryClick = (category) => {
+    navigate(`/categoria/${category}`); // Redirige a la categoría seleccionada
+  };
+
   return (
     <div className="w-full flex flex-wrap md:flex-nowrap">
       {categories.map((category, index) => (
         <div
           key={index}
-          className="relative group overflow-hidden h-[200px] w-full md:h-[500px] md:flex-1"
+          className="relative group overflow-hidden h-[200px] w-full md:h-[500px] md:flex-1 cursor-pointer"
+          onClick={() => handleCategoryClick(category.title)} // Redirige al hacer clic
         >
           {/* Imagen */}
           <img

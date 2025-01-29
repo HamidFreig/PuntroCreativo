@@ -36,7 +36,7 @@ const Categoria = () => {
         {items.map((item) => (
           <div
             key={item.id}
-            className="item-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
+            className="item-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 transform hover:scale-102"
           >
             {item.oferta && <Oferta />}
             <img
