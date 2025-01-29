@@ -27,9 +27,12 @@ const Producto = () => {
     );
   }
 
-  // Mensaje prellenado para WhatsApp con el nombre del producto
-  const mensajeWhatsapp = `Hola! Estoy interesado en el producto "${producto.titulo}". ¿Podrías darme más información?`;
-  const whatsappURL = `https://wa.me/1234567890?text=${encodeURIComponent(
+  // Mensaje prellenado para WhatsApp con la imagen y el nombre del producto
+  const mensajeWhatsapp = `Hola! Estoy interesado en el producto "${producto.titulo}". ¿Podrías darme más información?
+  
+🔗 *Imagen del Producto:* ${window.location.origin}${producto.foto}`;
+
+  const whatsappURL = `https://wa.me/935974865?text=${encodeURIComponent(
     mensajeWhatsapp
   )}`; // Reemplaza con tu número real de WhatsApp
 
@@ -38,9 +41,9 @@ const Producto = () => {
       {/* Botón para volver atrás */}
       <button
         onClick={() => navigate(-1)}
-        className="flex items-center justify-center gap-3 bg-gray-800 text-white font-semibold text-lg py-3 px-6 rounded-lg shadow-md hover:bg-gray-900 transition duration-300"
+        className="flex items-center gap-2 bg-gray-700 text-white font-medium text-md py-2 px-4 rounded-lg shadow-md hover:bg-gray-800 transition duration-300"
       >
-        <MdArrowBack size={28} /> Volver
+        <MdArrowBack size={22} /> Volver
       </button>
 
       {/* Contenido Principal */}
@@ -55,7 +58,7 @@ const Producto = () => {
         </div>
 
         {/* Detalles del Producto */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 bg-gray-100 p-5 rounded-lg shadow-md">
           <h1 className="text-3xl font-bold text-gray-900">
             {producto.titulo}
           </h1>
@@ -72,12 +75,12 @@ const Producto = () => {
             )}
           </div>
 
-          {/* Botón de WhatsApp para consultar (dentro de la card) */}
+          {/* Botón de WhatsApp dentro de la card */}
           <a
             href={whatsappURL}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 flex items-center justify-center gap-3 bg-green-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-green-700 transition-all duration-300 w-full md:w-auto"
+            className="mt-6 flex items-center justify-center gap-3 bg-green-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-green-700 transition-all duration-300 w-full"
           >
             <FaWhatsapp size={24} /> Consultar por WhatsApp
           </a>
