@@ -27,14 +27,19 @@ const Producto = () => {
     );
   }
 
-  // Mensaje prellenado para WhatsApp con la imagen y el nombre del producto
-  const mensajeWhatsapp = `Hola! Estoy interesado en el producto "${producto.titulo}". ¿Podrías darme más información?
-  
-🔗 *Imagen del Producto:* ${window.location.origin}${producto.foto}`;
+  // Asegurar que la imagen es accesible públicamente
+  const imagenURL = producto.foto.startsWith("http")
+    ? producto.foto
+    : `${window.location.origin}${producto.foto}`;
+
+  // Mensaje prellenado para WhatsApp con la imagen al inicio
+  const mensajeWhatsapp = `${imagenURL}
+
+Hola! Estoy interesado en el producto "${producto.titulo}". ¿Podrías darme más información?`;
 
   const whatsappURL = `https://wa.me/935974865?text=${encodeURIComponent(
     mensajeWhatsapp
-  )}`; // Reemplaza con tu número real de WhatsApp
+  )}`;
 
   return (
     <div className="max-w-4xl mx-auto my-10 p-6 bg-white rounded-xl shadow-lg">
@@ -48,13 +53,21 @@ const Producto = () => {
 
       {/* Contenido Principal */}
       <div className="flex flex-col md:flex-row items-center md:items-start gap-8 text-center md:text-left mt-6">
-        {/* Imagen del Producto */}
-        <div className="w-full md:w-1/2 flex justify-center">
+        {/* Imagen del Producto con "Oferta" en la parte superior */}
+        <div className="w-full md:w-1/2 flex justify-center relative">
+          {/* Imagen */}
           <img
-            src={producto.foto}
+            src={imagenURL}
             alt={producto.titulo}
             className="w-full max-w-sm h-auto object-cover rounded-lg shadow-md"
           />
+
+          {/* Cinta de Oferta con degradado */}
+          {producto.oferta && (
+            <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-red-500 to-orange-500 text-white text-sm font-bold py-2 text-center shadow-md">
+              🔥 ¡OFERTA ESPECIAL!
+            </div>
+          )}
         </div>
 
         {/* Detalles del Producto */}
@@ -68,11 +81,6 @@ const Producto = () => {
             <p className="text-3xl font-semibold text-green-600">
               ${producto.precio.toLocaleString()}
             </p>
-            {producto.oferta && (
-              <span className="bg-red-500 text-white text-sm font-semibold px-3 py-1 rounded-md">
-                Oferta
-              </span>
-            )}
           </div>
 
           {/* Botón de WhatsApp dentro de la card */}
